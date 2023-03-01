@@ -10,7 +10,7 @@ const info = [
 ];
 
 
-async function createWidget() {
+function createWidget() {
 
     // Neues Widget erstellen
     let listwidget = new ListWidget();
@@ -24,7 +24,7 @@ async function createWidget() {
     return listwidget;
 }
 
-async function createLWidget(widget) {
+function createLWidget(widget) {
 
     let main = widget.addStack()
     main.layoutHorizontally()
