@@ -114,12 +114,12 @@ function createTextBlock(mainBlock, sizeY) {
         // Quelle und Zeitdifferenz einfügen
         let sourceTimeBlock = textBlock.addStack()
             sourceTimeBlock.layoutHorizontally()
-        let source = sourceTimeBlock.addText(info[i][0] + " • ")
-            source.font = Font.systemFont(12);
-            source.textColor = new Color("#838B8B");
-        let time = sourceTimeBlock.addText(info[i][1])
-            time.font = Font.lightSystemFont(12);
-            time.textColor = new Color("#838B8B");
+            let source = sourceTimeBlock.addText(info[i][0] + " • ")
+                source.font = Font.systemFont(12);
+                source.textColor = new Color("#838B8B");
+            let time = sourceTimeBlock.addText(info[i][1])
+                time.font = Font.lightSystemFont(12);
+                time.textColor = new Color("#838B8B");
 
         // Titel einfügen
         let title = textBlock.addText(info[i][2]);
