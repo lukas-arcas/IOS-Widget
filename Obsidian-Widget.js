@@ -9,6 +9,15 @@ const info = [
     ["iPhoneBlog.de", "1h ago", "Das iPad (10.Generation)", "Der folgende Artikel ist über 6000 Zeichen lang"]
 ];
 
+const colors = {
+    "backgroundColor": "#ffffff",
+    "lineColor": "#E0EEEE",
+    "sourceColor": "#838B8B",
+    "timeColor": "#838B8B",
+    "contentColor": "#000000"
+}
+
+
 
 function createWidget() {
 
@@ -16,7 +25,7 @@ function createWidget() {
     let listwidget = new ListWidget();
 
     // Hintergrundfarbe festlegen
-    listwidget.backgroundColor = new Color("#ffffff");
+    listwidget.backgroundColor = new Color(colors["backgroundColor"]);
 
     //Check der Widget-Größe
     if (config.widgetFamily === "large") {
@@ -89,7 +98,7 @@ function createLogo(main) {
 function createLine(mainBlock) {
     let line = mainBlock.addStack()
         line.size = new Size(270, 0.5)
-        line.backgroundColor = new Color("#E0EEEE")
+        line.backgroundColor = new Color(colors["lineColor"])
 }
 
 function createTextBlock(mainBlock, sizeY) {
@@ -116,20 +125,20 @@ function createTextBlock(mainBlock, sizeY) {
             sourceTimeBlock.layoutHorizontally()
             let source = sourceTimeBlock.addText(info[i][0] + " • ")
                 source.font = Font.systemFont(12);
-                source.textColor = new Color("#838B8B");
+                source.textColor = new Color(colors["sourceColor"]);
             let time = sourceTimeBlock.addText(info[i][1])
                 time.font = Font.lightSystemFont(12);
-                time.textColor = new Color("#838B8B");
+                time.textColor = new Color(colors["timeColor"]);
 
         // Titel einfügen
         let title = textBlock.addText(info[i][2]);
             title.font = Font.systemFont(16);
-            title.textColor = new Color("#000000");
+            title.textColor = new Color(colors["contentColor"]);
 
         // Inhalt einfügen
         let text = textBlock.addText(info[i][3]);
             text.font = Font.lightSystemFont(15);
-            text.textColor = new Color("#000000");
+            text.textColor = new Color(colors["contentColor"]);
 
         // Trennstrich Zwischen den einzelnen Einträgen
         if (i < max) {
